@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AW-TECHNOLOGIES | Media Kit 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a2e;
+            --bg-card-hover: #1f1f35;
+            --accent-blue: #4f46e5;
+            --accent-purple: #7c3aed;
+            --accent-cyan: #06b6d4;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-pink: #ec4899;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-color: rgba(255,255,255,0.06);
+            --glow-blue: rgba(79,70,229,0.3);
+            --glow-purple: rgba(124,58,237,0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* ===== ANIMATED BACKGROUND ===== */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(rgba(79,70,229,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(79,70,229,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .bg-orbs {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: orbFloat 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 500px; height: 500px;
+            background: var(--accent-blue);
+            top: -10%; left: -5%;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 400px; height: 400px;
+            background: var(--accent-purple);
+            top: 40%; right: -10%;
+            animation-delay: -7s;
+        }
+
+        .orb-3 {
+            width: 350px; height: 350px;
+            background: var(--accent-cyan);
+            bottom: -5%; left: 30%;
+            animation-delay: -14s;
+        }
+
+        @keyframes orbFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -40px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(40px, 30px) scale(1.08); }
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 16px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            background: rgba(10,10,15,0.7);
+            border-bottom: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 10px 40px;
+            background: rgba(10,10,15,0.9);
+        }
+
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover { color: var(--text-primary); }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .nav-cta {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            text-decoration: none;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px var(--glow-blue);
+        }
+
+        /* ===== SECTIONS ===== */
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--accent-cyan);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 50px;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 80px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(79,70,229,0.1);
+            border: 1px solid rgba(79,70,229,0.2);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent-blue);
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-badge .dot {
+            width: 6px; height: 6px;
+            background: var(--accent-green);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -2px;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .hero h1 .gradient-text {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 550px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            width: 100%;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .hero-stat {
+            padding: 28px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-stat::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .hero-stat:hover::before { opacity: 1; }
+
+        .hero-stat:hover {
+            border-color: rgba(79,70,229,0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-stat .stat-value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-stat .stat-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-top: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== ABOUT ===== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .highlight-item .icon {
+            font-size: 1.2rem;
+        }
+
+        .about-visual {
+            position: relative;
+        }
+
+        .channel-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .channel-card::after {
+            content: '';
+            position: absolute;
+            top: -50%; right: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(79,70,229,0.05), transparent 60%);
+            pointer-events: none;
+        }
+
+        .channel-card .channel-icon {
+            width: 80px; height: 80px;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .channel-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .channel-card .channel-handle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .channel-card .channel-stats {
+            display: flex;
+            gap: 24px;
+        }
+
+        .channel-card .channel-stat {
+            text-align: center;
+        }
+
+        .channel-card .channel-stat .value {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .channel-card .channel-stat .label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== AUDIENCE DEMOGRAPHICS ===== */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .demo-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 36px;
+            transition: all 0.3s ease;
+        }
+
+        .demo-card:hover {
+            border-color: rgba(79,70,229,0.15);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .demo-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .demo-card .demo-subtitle {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .chart-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+        }
+
+        /* ===== GEOGRAPHY ===== */
+        .geo-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .geo-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 12px;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+        }
+
+        .geo-item:hover {
+            background: rgba(255,255,255,0.04);
+            border-color: var(--border-color);
+        }
+
+        .geo-rank {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            width: 24px;
+        }
+
+        .geo-flag {
+            font-size: 1.4rem;
+            width: 32px;
+            text-align: center;
+        }
+
+        .geo-info {
+            flex: 1;
+        }
+
+        .geo-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .geo-bar-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 2px;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+
+        .geo-bar {
+            height: 100%;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+            transition: width 1.5s ease;
+            width: 0;
+        }
+
+        .geo-views {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            text-align: right;
+            min-width: 80px;
+        }
+
+        .geo-pct {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        /* ===== AGE/GENDER CHART ===== */
+        .age-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .age-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .age-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            width: 75px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .age-bars {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .age-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .age-bar-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            width: 35px;
+            flex-shrink: 0;
+        }
+
+        .age-bar-track {
+            flex: 1;
+            height: 16px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .age-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1.5s ease;
+            width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 6px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .age-bar-fill.male {
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+        }
+
+        .age-bar-fill.female {
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
+        }
+
+        /* ===== BRANDS ===== */
+        .brands-section {
+            padding-bottom: 60px;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .brand-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            gap: 14px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            min-height: 140px;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-card:hover {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            border-radius: 14px;
+            position: relative;
+            z-index: 1;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-card:hover .brand-logo {
+            transform: scale(1.05);
+        }
+
+        .brand-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(79,70,229,0.08), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .brand-card:hover::before { opacity: 1; }
+
+        .brand-card:hover {
+            border-color: rgba(79,70,229,0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+        }
+
+        .brand-icon {
+            width: 56px; height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-type {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== CONTENT CATEGORIES ===== */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            border-color: rgba(79,70,229,0.15);
+            transform: translateY(-3px);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .category-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== COLLABORATION TYPES ===== */
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .collab-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .collab-card:hover {
+            border-color: rgba(79,70,229,0.15);
+            transform: translateY(-3px);
+        }
+
+        .collab-number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .collab-info h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .collab-info p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ===== CONTACT / CTA ===== */
+        .cta-section {
+            text-align: center;
+            padding: 120px 40px;
+        }
+
+        .cta-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan), var(--accent-purple));
+        }
+
+        .cta-box h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .cta-box p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 36px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            padding: 14px 32px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--glow-blue);
+        }
+
+        .btn-secondary {
+            padding: 14px 32px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-blue);
+            background: rgba(79,70,229,0.05);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== COUNTER ANIMATION ===== */
+        .counter { display: inline-block; }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .hero-stats { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: 1fr; }
+            .demo-grid { grid-template-columns: 1fr; }
+            .categories-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 60px 20px; }
+            nav { padding: 12px 20px; }
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero-stats { grid-template-columns: 1fr 1fr; gap: 12px; }
+            .hero-stat { padding: 20px; }
+            .hero-stat .stat-value { font-size: 1.6rem; }
+            .section-title { font-size: 2rem; }
+            .categories-grid { grid-template-columns: 1fr; }
+            .collab-grid { grid-template-columns: 1fr; }
+            .brands-grid { grid-template-columns: repeat(2, 1fr); }
+            .cta-box { padding: 40px 24px; }
+            .cta-box h2 { font-size: 1.8rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats { grid-template-columns: 1fr; }
+            .brands-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent-blue); border-radius: 3px; }
+
+        /* ===== PRINT ===== */
+        @media print {
+            nav, .bg-grid, .bg-orbs { display: none; }
+            body { background: white; color: black; }
+            section { padding: 30px 20px; }
+        }
+
+        /* ===== MODAL FORM ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            transform: translateY(-30px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            background: var(--bg-card-hover);
+            color: var(--text-primary);
+            border-color: var(--accent-blue);
+        }
+
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .modal-header h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .modal-header p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 14px 16px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-submit {
+            padding: 16px 32px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border: none;
+            border-radius: 12px;
+            color: white;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 8px;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--glow-blue);
+        }
+
+        .form-submit:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Effects -->
+    <div class="bg-grid"></div>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-logo">AW-TECHNOLOGIES</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#audience">Audience</a></li>
+            <li><a href="#geography">Geography</a></li>
+            <li><a href="#brands">Brands</a></li>
+            <li><a href="#collaborations">Collaborations</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Let's Collaborate</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-badge">
+            <span class="dot"></span>
+            Available for Brand Partnerships 2026
+        </div>
+        <h1>
+            AI & Tech Content<br>
+            <span class="gradient-text">That Converts</span>
+        </h1>
+        <p class="hero-description">
+            AW-TECHNOLOGIES is a leading AI & technology YouTube channel delivering high-impact tutorials, tool reviews, and automation strategies to a global audience of 2.1M+ viewers.
+        </p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <div class="stat-value"><span class="counter" data-target="2.17">0</span>M+</div>
+                <div class="stat-label">Total Views</div>
+            </div>
+            <div class="hero-stat">
+                <div class="stat-value"><span class="counter" data-target="38">0</span>sec</div>
+                <div class="stat-label">Avg. Watch Time</div>
+            </div>
+            <div class="hero-stat">
+                <div class="stat-value"><span class="counter" data-target="100">0</span>+</div>
+                <div class="stat-label">Countries Reached</div>
+            </div>
+            <div class="hero-stat">
+                <div class="stat-value"><span class="counter" data-target="15">0</span></div>
+                <div class="stat-label">Brand Partnerships</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-text fade-in">
+                <div class="section-label">About The Channel</div>
+                <h2 class="section-title">Where AI Meets<br>Real-World Application</h2>
+                <p>
+                    AW-TECHNOLOGIES, led by Alex Wambua, is a trusted voice in AI education and technology content. We break down complex AI tools, automation workflows, and emerging tech into actionable, easy-to-understand content that drives real results.
+                </p>
+                <p>
+                    Our audience consists of tech-savvy professionals, entrepreneurs, and decision-makers actively seeking AI solutions — making us the ideal partner for brands in the AI, SaaS, and technology space.
+                </p>
+                <div class="about-highlights">
+                    <div class="highlight-item">
+                        <span class="icon">🎯</span>
+                        AI Tools & Tutorials
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">⚡</span>
+                        Automation Workflows
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">🤖</span>
+                        AI Agent Demos
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">📈</span>
+                        Tech Reviews
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">💡</span>
+                        No-Code Solutions
+                    </div>
+                    <div class="highlight-item">
+                        <span class="icon">🌍</span>
+                        Global Reach
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual fade-in">
+                <div class="channel-card">
+                    <div class="channel-icon">▶</div>
+                    <h3>AW-TECHNOLOGIES</h3>
+                    <div class="channel-handle">@awcd · YouTube</div>
+                    <div class="channel-stats">
+                        <div class="channel-stat">
+                            <div class="value">2.17M+</div>
+                            <div class="label">Views</div>
+                        </div>
+                        <div class="channel-stat">
+                            <div class="value">7,613</div>
+                            <div class="label">Watch Hrs</div>
+                        </div>
+                        <div class="channel-stat">
+                            <div class="value">100+</div>
+                            <div class="label">Countries</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audience Demographics -->
+    <section id="audience">
+        <div class="section-label fade-in">Audience Demographics</div>
+        <h2 class="section-title fade-in">Who Watches AW-TECHNOLOGIES</h2>
+        <p class="section-subtitle fade-in">
+            A highly engaged, predominantly male audience aged 18-44 — the prime demographic for tech and AI products.
+        </p>
+        <div class="demo-grid">
+            <div class="demo-card fade-in">
+                <h3>Age Distribution</h3>
+                <p class="demo-subtitle">Breakdown by viewer age group</p>
+                <div class="age-chart" id="ageChart"></div>
+            </div>
+            <div class="demo-card fade-in">
+                <h3>Gender Split</h3>
+                <p class="demo-subtitle">Male vs Female viewership</p>
+                <div class="chart-container">
+                    <canvas id="genderChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geography -->
+    <section id="geography">
+        <div class="section-label fade-in">Global Reach</div>
+        <h2 class="section-title fade-in">Audience by Geography</h2>
+        <p class="section-subtitle fade-in">
+            Strong presence across 100+ countries with significant reach in key markets.
+        </p>
+        <div class="demo-grid">
+            <div class="demo-card fade-in">
+                <h3>Top 15 Markets</h3>
+                <p class="demo-subtitle">By total views</p>
+                <div class="geo-list" id="geoList"></div>
+            </div>
+            <div class="demo-card fade-in">
+                <h3>Regional Breakdown</h3>
+                <p class="demo-subtitle">Views by continent</p>
+                <div class="chart-container">
+                    <canvas id="regionChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Categories -->
+    <section id="content">
+        <div class="section-label fade-in">Content Pillars</div>
+        <h2 class="section-title fade-in">What We Create</h2>
+        <p class="section-subtitle fade-in">
+            Diverse content formats designed to educate, engage, and drive action.
+        </p>
+        <div class="categories-grid">
+            <div class="category-card fade-in">
+                <div class="category-icon">🤖</div>
+                <h4>AI Tool Reviews</h4>
+                <p>In-depth reviews and comparisons of the latest AI tools, platforms, and software for professionals and businesses.</p>
+            </div>
+            <div class="category-card fade-in">
+                <div class="category-icon">🔧</div>
+                <h4>Tutorials & How-To</h4>
+                <p>Step-by-step guides on using AI tools, building automations, and implementing tech solutions without coding.</p>
+            </div>
+            <div class="category-card fade-in">
+                <div class="category-icon">⚡</div>
+                <h4>Automation Workflows</h4>
+                <p>Real-world automation setups using AI agents, no-code platforms, and integrations that save time and money.</p>
+            </div>
+            <div class="category-card fade-in">
+                <div class="category-icon">📊</div>
+                <h4>Tech News & Trends</h4>
+                <p>Breaking down the latest AI announcements, product launches, and industry trends in accessible formats.</p>
+            </div>
+            <div class="category-card fade-in">
+                <div class="category-icon">💰</div>
+                <h4>AI for Business</h4>
+                <p>Strategies for leveraging AI to grow businesses, improve productivity, and create new revenue streams.</p>
+            </div>
+            <div class="category-card fade-in">
+                <div class="category-icon">🎓</div>
+                <h4>Educational Content</h4>
+                <p>Foundational AI education for beginners and advanced learners, building digital literacy across demographics.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="brands-section">
+        <div class="section-label fade-in">Trusted Partners</div>
+        <h2 class="section-title fade-in">Brands We've Worked With</h2>
+        <p class="section-subtitle fade-in">
+            Proud to have partnered with innovative AI and technology companies to create impactful content.
+        </p>
+        <div class="brands-grid" id="brandsGrid"></div>
+    </section>
+
+    <!-- Collaboration Types -->
+    <section id="collaborations">
+        <div class="section-label fade-in">Partnership Options</div>
+        <h2 class="section-title fade-in">How We Collaborate</h2>
+        <p class="section-subtitle fade-in">
+            Flexible partnership models tailored to your brand goals and audience needs.
+        </p>
+        <div class="collab-grid">
+            <div class="collab-card fade-in">
+                <div class="collab-number">01</div>
+                <div class="collab-info">
+                    <h4>Sponsored Videos</h4>
+                    <p>Dedicated video content showcasing your product, tool, or service to our engaged audience with authentic integration.</p>
+                </div>
+            </div>
+            <div class="collab-card fade-in">
+                <div class="collab-number">02</div>
+                <div class="collab-info">
+                    <h4>Product Reviews & Demos</h4>
+                    <p>In-depth, hands-on reviews and walkthroughs that highlight your product's features and real-world applications.</p>
+                </div>
+            </div>
+            <div class="collab-card fade-in">
+                <div class="collab-number">03</div>
+                <div class="collab-info">
+                    <h4>Tutorial Integrations</h4>
+                    <p>Your tool featured as part of a practical tutorial, demonstrating value through real use cases and workflows.</p>
+                </div>
+            </div>
+            <div class="collab-card fade-in">
+                <div class="collab-number">04</div>
+                <div class="collab-info">
+                    <h4>Brand Ambassadorships</h4>
+                    <p>Long-term partnership with recurring features, dedicated content series, and authentic brand representation.</p>
+                </div>
+            </div>
+            <div class="collab-card fade-in">
+                <div class="collab-number">05</div>
+                <div class="collab-info">
+                    <h4>Newsletter & Social Features</h4>
+                    <p>Cross-platform promotion across all social channels and community touchpoints for maximum reach.</p>
+                </div>
+            </div>
+            <div class="collab-card fade-in">
+                <div class="collab-number">06</div>
+                <div class="collab-info">
+                    <h4>Custom Campaigns</h4>
+                    <p>Bespoke content strategies designed around your product launch, campaign goals, or specific audience targeting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / CTA -->
+    <section class="cta-section" id="contact">
+        <div class="cta-box fade-in">
+            <div class="section-label">Let's Work Together</div>
+            <h2>Ready to Reach<br><span class="gradient-text">2M+ Tech Viewers?</span></h2>
+            <p>Let's discuss how AW-TECHNOLOGIES can help amplify your brand message to a highly engaged, tech-forward audience.</p>
+            <div class="cta-buttons">
+                <a href="https://www.youtube.com/@awcd" target="_blank" class="btn-primary">
+                    ▶ Visit YouTube Channel
+                </a>
+                <button type="button" class="btn-secondary" id="openInquiryBtn">
+                    ✉️ Send Inquiry
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Modal -->
+    <div class="modal-overlay" id="inquiryModal">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModalBtn">&times;</button>
+            <div class="modal-header">
+                <h3>Send Inquiry</h3>
+                <p>Let's discuss how we can work together</p>
+            </div>
+            <form class="modal-form" action="https://formsubmit.co/amwambua90@gmail.com" method="POST">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New Inquiry from AW-TECHNOLOGIES Media Kit">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+                
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="john@company.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Inquiry Message *</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your brand and how you'd like to collaborate..." required></textarea>
+                </div>
+                
+                <button type="submit" class="form-submit">
+                    Send Message →
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 AW-TECHNOLOGIES · Media Kit · <a href="https://www.youtube.com/@awcd" target="_blank" style="color: var(--accent-blue); text-decoration: none;">youtube.com/@awcd</a></p>
+    </footer>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+
+    <script>
+        // ===== DATA =====
+        const geographyData = [
+            { code: 'IN', name: 'India', views: 1176811, flag: '🇮🇳' },
+            { code: 'US', name: 'United States', views: 181652, flag: '🇺🇸' },
+            { code: 'PK', name: 'Pakistan', views: 71613, flag: '🇵🇰' },
+            { code: 'BD', name: 'Bangladesh', views: 48157, flag: '🇧🇩' },
+            { code: 'PH', name: 'Philippines', views: 35483, flag: '🇵🇭' },
+            { code: 'GB', name: 'United Kingdom', views: 35010, flag: '🇬🇧' },
+            { code: 'KE', name: 'Kenya', views: 29875, flag: '🇰🇪' },
+            { code: 'NG', name: 'Nigeria', views: 29328, flag: '🇳🇬' },
+            { code: 'CA', name: 'Canada', views: 22837, flag: '🇨🇦' },
+            { code: 'ID', name: 'Indonesia', views: 22704, flag: '🇮🇩' },
+            { code: 'AE', name: 'UAE', views: 22006, flag: '🇦🇪' },
+            { code: 'ZA', name: 'South Africa', views: 20628, flag: '🇿🇦' },
+            { code: 'DE', name: 'Germany', views: 18341, flag: '🇩🇪' },
+            { code: 'LK', name: 'Sri Lanka', views: 16911, flag: '🇱🇰' },
+            { code: 'SA', name: 'Saudi Arabia', views: 15745, flag: '🇸🇦' },
+        ];
+
+        const totalViews = 2167817;
+        const maxViews = geographyData[0].views;
+
+        const ageGenderData = [
+            { age: '13-17', male: 1.52, female: 0.23 },
+            { age: '18-24', male: 12.03, female: 3.71 },
+            { age: '25-34', male: 32.16, female: 7.19 },
+            { age: '35-44', male: 22.74, female: 5.17 },
+            { age: '45-54', male: 8.29, female: 1.90 },
+            { age: '55-64', male: 2.83, female: 0.65 },
+            { age: '65+', male: 1.39, female: 0.19 },
+        ];
+
+        const brands = [
+            { name: 'Higgsfield', logo: 'Higgsfield%20AI.png', type: 'AI Video', url: 'https://youtu.be/BU0sj1D1zDU' },
+            { name: 'Hailou', logo: 'hailuo-icon-logo.png', type: 'Audio Tech', url: 'https://youtu.be/8nXQmeGhzlo' },
+            { name: 'Coursiv', logo: 'Coursiv%20AI.png', type: 'AI Writing', url: 'https://youtu.be/87hWcyt9uPo' },
+            { name: 'RecCloud', logo: 'RecCloud%20logo.png', type: 'AI Recording', url: 'https://youtu.be/mhn3LB2AsL0' },
+            { name: 'Nut Studio', logo: 'nut-studio-logo.png', type: 'AI Platform', url: 'https://youtu.be/wRW0MTZk1A0' },
+            { name: 'Lessie AI', logo: 'Lessie%20AI.png', type: 'AI Assistant', url: 'https://youtu.be/jdgp7MvyCVQ' },
+            { name: 'Lart AI', logo: 'Lart%20AI.jpg', type: 'AI Creative', url: 'https://youtu.be/wt0ahDTVV8w' },
+            { name: 'Lemon Slice', logo: 'Lemon%20Slice.png', type: 'AI Tools', url: 'https://youtu.be/BsVewjfOQEw' },
+            { name: 'Remaker AI', logo: 'Remaker%20AI.jpg', type: 'AI Face/Photo', url: 'https://youtu.be/3nHFLh9X8Ik' },
+            { name: 'SmallPPT', logo: 'Small%20PPT.jpg', type: 'AI Presentations', url: 'https://youtu.be/xv01EJEh57A' },
+            { name: 'OpenCreator', logo: 'OpenCreator.jpg', type: 'AI Content', url: 'https://youtu.be/CpjoQm5kFg0' },
+            { name: 'FlexClip', logo: 'FlexClip.png', type: 'Video Editor', url: 'https://youtu.be/nhewRlAicy8' },
+            { name: 'Coloring Book AI', logo: 'coloringbook-ai.webp', type: 'AI Art', url: 'https://youtu.be/rTEVNx1bZog' },
+            { name: 'PopPop AI', logo: 'poppop-ai.webp', type: 'AI Stickers', url: 'https://youtu.be/RfJtnQj1lbU' },
+            { name: 'Castmagic', logo: 'Castmagic.png', type: 'AI Podcast', url: 'https://youtu.be/8WXzsKPXrBI' },
+        ];
+
+        // ===== NAVBAR SCROLL =====
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===== FADE IN ON SCROLL =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // ===== COUNTER ANIMATION =====
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    const target = parseFloat(counter.dataset.target);
+                    const isDecimal = target % 1 !== 0;
+                    const duration = 2000;
+                    const start = performance.now();
+
+                    function update(now) {
+                        const elapsed = now - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        const current = eased * target;
+                        counter.textContent = isDecimal ? current.toFixed(2) : Math.floor(current);
+                        if (progress < 1) requestAnimationFrame(update);
+                    }
+                    requestAnimationFrame(update);
+                    counterObserver.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(el => counterObserver.observe(el));
+
+        // ===== GEOGRAPHY LIST =====
+        const geoList = document.getElementById('geoList');
+        geographyData.forEach((item, i) => {
+            const pct = ((item.views / totalViews) * 100).toFixed(1);
+            const barWidth = ((item.views / maxViews) * 100).toFixed(1);
+            const div = document.createElement('div');
+            div.className = 'geo-item';
+            div.innerHTML = `
+                <span class="geo-rank">${i + 1}</span>
+                <span class="geo-flag">${item.flag}</span>
+                <div class="geo-info">
+                    <div class="geo-name">${item.name}</div>
+                    <div class="geo-bar-container">
+                        <div class="geo-bar" data-width="${barWidth}"></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="geo-views">${(item.views / 1000).toFixed(0)}K</div>
+                    <div class="geo-pct">${pct}%</div>
+                </div>
+            `;
+            geoList.appendChild(div);
+        });
+
+        // Animate geo bars
+        const geoBarObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.geo-bar');
+                    bars.forEach((bar, i) => {
+                        setTimeout(() => {
+                            bar.style.width = bar.dataset.width + '%';
+                        }, i * 80);
+                    });
+                    geoBarObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        geoBarObserver.observe(geoList);
+
+        // ===== AGE/GENDER CHART =====
+        const ageChart = document.getElementById('ageChart');
+        ageGenderData.forEach(row => {
+            const rowDiv = document.createElement('div');
+            rowDiv.className = 'age-row';
+            rowDiv.innerHTML = `
+                <span class="age-label">${row.age}</span>
+                <div class="age-bars">
+                    <div class="age-bar-row">
+                        <span class="age-bar-label">Male</span>
+                        <div class="age-bar-track">
+                            <div class="age-bar-fill male" data-width="${row.male}">${row.male}%</div>
+                        </div>
+                    </div>
+                    <div class="age-bar-row">
+                        <span class="age-bar-label">Female</span>
+                        <div class="age-bar-track">
+                            <div class="age-bar-fill female" data-width="${row.female}">${row.female}%</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            ageChart.appendChild(rowDiv);
+        });
+
+        const ageBarObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.age-bar-fill');
+                    bars.forEach((bar, i) => {
+                        setTimeout(() => {
+                            bar.style.width = bar.dataset.width + '%';
+                        }, i * 60);
+                    });
+                    ageBarObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        ageBarObserver.observe(ageChart);
+
+        // ===== GENDER DONUT CHART =====
+        const genderCtx = document.getElementById('genderChart');
+        let genderChartInstance = null;
+
+        const genderObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !genderChartInstance) {
+                    const totalMale = ageGenderData.reduce((s, r) => s + r.male, 0);
+                    const totalFemale = ageGenderData.reduce((s, r) => s + r.female, 0);
+
+                    genderChartInstance = new Chart(genderCtx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: ['Male', 'Female'],
+                            datasets: [{
+                                data: [totalMale, totalFemale],
+                                backgroundColor: [
+                                    'rgba(79, 70, 229, 0.85)',
+                                    'rgba(236, 72, 153, 0.85)'
+                                ],
+                                borderColor: [
+                                    'rgba(79, 70, 229, 1)',
+                                    'rgba(236, 72, 153, 1)'
+                                ],
+                                borderWidth: 2,
+                                hoverOffset: 8,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            cutout: '65%',
+                            plugins: {
+                                legend: {
+                                    position: 'bottom',
+                                    labels: {
+                                        color: '#94a3b8',
+                                        font: { family: 'Inter', size: 13, weight: '500' },
+                                        padding: 20,
+                                        usePointStyle: true,
+                                        pointStyleWidth: 12,
+                                    }
+                                },
+                                tooltip: {
+                                    backgroundColor: '#1a1a2e',
+                                    titleColor: '#f1f5f9',
+                                    bodyColor: '#94a3b8',
+                                    borderColor: 'rgba(255,255,255,0.1)',
+                                    borderWidth: 1,
+                                    cornerRadius: 8,
+                                    padding: 12,
+                                    callbacks: {
+                                        label: function(ctx) {
+                                            return ` ${ctx.label}: ${ctx.parsed.toFixed(1)}%`;
+                                        }
+                                    }
+                                }
+                            },
+                            animation: {
+                                animateRotate: true,
+                                duration: 1500,
+                            }
+                        }
+                    });
+                    genderObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        genderObserver.observe(genderCtx);
+
+        // ===== REGION CHART =====
+        const regionCtx = document.getElementById('regionChart');
+        let regionChartInstance = null;
+
+        const regionMap = {
+            'IN': 'Asia', 'PK': 'Asia', 'BD': 'Asia', 'PH': 'Asia', 'ID': 'Asia', 'AE': 'Asia',
+            'LK': 'Asia', 'SA': 'Asia', 'MY': 'Asia', 'NP': 'Asia', 'TH': 'Asia',
+            'VN': 'Asia', 'MM': 'Asia', 'KH': 'Asia', 'TW': 'Asia', 'JP': 'Asia', 'KR': 'Asia',
+            'IR': 'Asia', 'IQ': 'Asia', 'IL': 'Asia', 'JO': 'Asia', 'KW': 'Asia', 'OM': 'Asia',
+            'QA': 'Asia', 'UZ': 'Asia', 'HK': 'Asia', 'SG': 'Asia',
+            'KE': 'Africa', 'NG': 'Africa', 'ZA': 'Africa', 'GH': 'Africa', 'MA': 'Africa',
+            'TZ': 'Africa', 'EG': 'Africa', 'ZM': 'Africa', 'UG': 'Africa', 'ZW': 'Africa',
+            'MW': 'Africa', 'CM': 'Africa', 'RW': 'Africa', 'BI': 'Africa', 'SN': 'Africa',
+            'BJ': 'Africa', 'CG': 'Africa', 'DZ': 'Africa', 'SD': 'Africa',
+            'SZ': 'Africa', 'BW': 'Africa', 'MU': 'Africa', 'MZ': 'Africa',
+            'US': 'North America', 'CA': 'North America', 'MX': 'North America',
+            'GB': 'Europe', 'DE': 'Europe', 'NL': 'Europe', 'FR': 'Europe', 'IT': 'Europe',
+            'PL': 'Europe', 'RO': 'Europe', 'ES': 'Europe', 'PT': 'Europe',
+            'AT': 'Europe', 'CH': 'Europe', 'SE': 'Europe', 'DK': 'Europe', 'BE': 'Europe',
+            'NO': 'Europe', 'HR': 'Europe', 'RS': 'Europe', 'FI': 'Europe', 'IE': 'Europe',
+            'LU': 'Europe', 'AL': 'Europe', 'GR': 'Europe',
+            'AU': 'Oceania', 'NZ': 'Oceania', 'FJ': 'Oceania',
+            'BR': 'South America', 'CL': 'South America', 'CO': 'South America',
+            'ET': 'Africa', 'TR': 'Asia',
+        };
+
+        const allGeoData = [
+            { code: 'IN', views: 1176811 }, { code: 'US', views: 181652 }, { code: 'PK', views: 71613 },
+            { code: 'BD', views: 48157 }, { code: 'PH', views: 35483 }, { code: 'GB', views: 35010 },
+            { code: 'KE', views: 29875 }, { code: 'NG', views: 29328 }, { code: 'CA', views: 22837 },
+            { code: 'ID', views: 22704 }, { code: 'AE', views: 22006 }, { code: 'ZA', views: 20628 },
+            { code: 'DE', views: 18341 }, { code: 'LK', views: 16911 }, { code: 'SA', views: 15745 },
+            { code: 'NP', views: 15611 }, { code: 'ET', views: 15034 }, { code: 'AU', views: 14664 },
+            { code: 'MY', views: 14158 }, { code: 'NL', views: 8670 }, { code: 'SG', views: 6310 },
+            { code: 'GH', views: 5595 }, { code: 'IT', views: 5463 }, { code: 'MA', views: 4726 },
+            { code: 'MM', views: 4071 }, { code: 'FR', views: 3856 }, { code: 'TH', views: 3264 },
+            { code: 'TZ', views: 3249 }, { code: 'BR', views: 2938 }, { code: 'TR', views: 2518 },
+            { code: 'EG', views: 2295 }, { code: 'PL', views: 2140 }, { code: 'VN', views: 1690 },
+            { code: 'RO', views: 1467 }, { code: 'ZM', views: 1419 }, { code: 'HK', views: 1411 },
+            { code: 'JP', views: 1288 }, { code: 'UG', views: 911 }, { code: 'ES', views: 882 },
+            { code: 'KR', views: 641 }, { code: 'QA', views: 634 }, { code: 'DZ', views: 557 },
+            { code: 'SE', views: 518 }, { code: 'NZ', views: 497 }, { code: 'UZ', views: 463 },
+            { code: 'CH', views: 435 }, { code: 'ZW', views: 428 }, { code: 'MX', views: 415 },
+            { code: 'GR', views: 378 }, { code: 'KH', views: 305 }, { code: 'KW', views: 278 },
+            { code: 'PT', views: 209 }, { code: 'AT', views: 208 }, { code: 'RW', views: 205 },
+            { code: 'CM', views: 202 }, { code: 'OM', views: 199 }, { code: 'IL', views: 151 },
+            { code: 'IE', views: 149 }, { code: 'RS', views: 144 }, { code: 'IQ', views: 142 },
+            { code: 'FI', views: 128 }, { code: 'DK', views: 113 }, { code: 'BE', views: 87 },
+            { code: 'AL', views: 86 }, { code: 'BH', views: 82 }, { code: 'NO', views: 67 },
+            { code: 'HR', views: 58 }, { code: 'TW', views: 57 }, { code: 'SZ', views: 51 },
+            { code: 'MW', views: 46 }, { code: 'BW', views: 45 }, { code: 'BJ', views: 40 },
+            { code: 'IR', views: 39 }, { code: 'FJ', views: 38 }, { code: 'BI', views: 37 },
+            { code: 'CL', views: 35 }, { code: 'JO', views: 31 }, { code: 'CG', views: 29 },
+            { code: 'LU', views: 29 }, { code: 'SL', views: 27 }, { code: 'SD', views: 24 },
+            { code: 'CO', views: 22 }, { code: 'SN', views: 19 }, { code: 'MZ', views: 16 },
+        ];
+
+        const regionTotals = { 'Asia': 0, 'Africa': 0, 'North America': 0, 'Europe': 0, 'Oceania': 0, 'South America': 0 };
+        allGeoData.forEach(item => {
+            const region = regionMap[item.code] || 'Other';
+            if (regionTotals.hasOwnProperty(region)) {
+                regionTotals[region] += item.views;
+            }
+        });
+
+        const regionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !regionChartInstance) {
+                    regionChartInstance = new Chart(regionCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: Object.keys(regionTotals),
+                            datasets: [{
+                                label: 'Views',
+                                data: Object.values(regionTotals),
+                                backgroundColor: [
+                                    'rgba(79, 70, 229, 0.75)',
+                                    'rgba(16, 185, 129, 0.75)',
+                                    'rgba(6, 182, 212, 0.75)',
+                                    'rgba(245, 158, 11, 0.75)',
+                                    'rgba(236, 72, 153, 0.75)',
+                                    'rgba(139, 92, 246, 0.75)',
+                                ],
+                                borderColor: [
+                                    'rgba(79, 70, 229, 1)',
+                                    'rgba(16, 185, 129, 1)',
+                                    'rgba(6, 182, 212, 1)',
+                                    'rgba(245, 158, 11, 1)',
+                                    'rgba(236, 72, 153, 1)',
+                                    'rgba(139, 92, 246, 1)',
+                                ],
+                                borderWidth: 1,
+                                borderRadius: 6,
+                                borderSkipped: false,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            indexAxis: 'y',
+                            plugins: {
+                                legend: { display: false },
+                                tooltip: {
+                                    backgroundColor: '#1a1a2e',
+                                    titleColor: '#f1f5f9',
+                                    bodyColor: '#94a3b8',
+                                    borderColor: 'rgba(255,255,255,0.1)',
+                                    borderWidth: 1,
+                                    cornerRadius: 8,
+                                    padding: 12,
+                                    callbacks: {
+                                        label: function(ctx) {
+                                            return ` ${(ctx.parsed.x / 1000000).toFixed(2)}M views`;
+                                        }
+                                    }
+                                }
+                            },
+                            scales: {
+                                x: {
+                                    grid: { color: 'rgba(255,255,255,0.04)' },
+                                    ticks: {
+                                        color: '#64748b',
+                                        font: { family: 'Inter', size: 11 },
+                                        callback: function(val) {
+                                            return (val / 1000000).toFixed(1) + 'M';
+                                        }
+                                    }
+                                },
+                                y: {
+                                    grid: { display: false },
+                                    ticks: {
+                                        color: '#94a3b8',
+                                        font: { family: 'Inter', size: 12, weight: '500' },
+                                    }
+                                }
+                            },
+                            animation: {
+                                duration: 1500,
+                                easing: 'easeOutQuart',
+                            }
+                        }
+                    });
+                    regionObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        regionObserver.observe(regionCtx);
+
+        // ===== BRANDS GRID =====
+        const brandsGrid = document.getElementById('brandsGrid');
+        brands.forEach(brand => {
+            const link = document.createElement('a');
+            link.href = brand.url;
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+            link.className = 'brand-card fade-in';
+            link.innerHTML = `
+                <img src="Logos/${brand.logo}" alt="${brand.name}" class="brand-logo" loading="lazy">
+                <div class="brand-name">${brand.name}</div>
+                <div class="brand-type">${brand.type}</div>
+            `;
+            brandsGrid.appendChild(link);
+        });
+
+        // Observe newly added brand cards
+        document.querySelectorAll('.brand-card.fade-in').forEach(el => observer.observe(el));
+
+        // ===== SMOOTH SCROLL =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===== MODAL FORM =====
+        const inquiryModal = document.getElementById('inquiryModal');
+        const openInquiryBtn = document.getElementById('openInquiryBtn');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const modalForm = document.querySelector('.modal-form');
+
+        // Open modal
+        openInquiryBtn.addEventListener('click', () => {
+            inquiryModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close modal
+        closeModalBtn.addEventListener('click', () => {
+            inquiryModal.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close modal on overlay click
+        inquiryModal.addEventListener('click', (e) => {
+            if (e.target === inquiryModal) {
+                inquiryModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && inquiryModal.classList.contains('active')) {
+                inquiryModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Handle form submission
+        modalForm.addEventListener('submit', (e) => {
+            const submitBtn = modalForm.querySelector('.form-submit');
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+        });
+    </script>
+</body>
+</html>
